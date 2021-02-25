@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: book-service
+  profiles:
+    active: dev
+  jpa:
+    show-sql: true
+    database: postgresql
+    hibernate:
+      ddl-auto: validatte
+  flyway:
+    baseline-on-migrate: false
+    enabled: true
+    locations: classpath:/db/migration
+eureka:
+  instance:
+    hostname: localhost
+    port: 8761
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+  server:
+    wait-time-in-ms-when-sync-empty: 3000

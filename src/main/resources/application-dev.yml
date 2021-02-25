@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://tuffi.db.elephantsql.com:5432/hkpianww?createDatabaseIfNotExist=true&useSSL=true
+    username: hkpianww
+    password: TplnOFhCSl5PJJnPvCz2AMC9_s3VaIHZ
+    platform: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    database: postgresql
