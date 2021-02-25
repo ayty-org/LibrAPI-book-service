@@ -1,4 +1,4 @@
-package com.ghostdovahkiin.librapi.service.book;
+package com.ghostdovahkiin.librapi.bookservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
