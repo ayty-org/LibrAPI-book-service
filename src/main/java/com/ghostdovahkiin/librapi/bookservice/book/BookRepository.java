@@ -7,6 +7,7 @@ import java.util.List;
 
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
+    Book findBySpecificID(String specificID);
     List<Book> findBookByCategoryName(String categoryName);
     boolean existsByIsbn(String isbn);
 }

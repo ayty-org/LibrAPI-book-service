@@ -3,6 +3,7 @@ package com.ghostdovahkiin.librapi.bookservice.book.v1;
 import com.ghostdovahkiin.librapi.bookservice.book.Book;
 import com.ghostdovahkiin.librapi.bookservice.book.BookDTO;
 import com.ghostdovahkiin.librapi.bookservice.book.services.DeleteBookService;
+import com.ghostdovahkiin.librapi.bookservice.book.services.GetBookBySpecificID;
 import com.ghostdovahkiin.librapi.bookservice.book.services.GetBookService;
 import com.ghostdovahkiin.librapi.bookservice.book.services.ListBookByCategoryNameService;
 import com.ghostdovahkiin.librapi.bookservice.book.services.ListBookService;
@@ -37,6 +38,7 @@ public class BookController {
     private final ListBookByCategoryNameService listBookByCategoryNameService;
     private final UpdateBookService updateBookService;
     private final DeleteBookService deleteBookService;
+    private final GetBookBySpecificID getBookBySpecificID;
 
     @GetMapping(path = "/")
     @ResponseStatus(HttpStatus.OK)
@@ -60,6 +62,12 @@ public class BookController {
     @ResponseStatus(HttpStatus.OK)
     public BookDTO findById(@PathVariable Long id) {
         return BookDTO.from(getBookService.findById(id));
+    }
+
+    @GetMapping(path = "/id/{specificID}")
+    @ResponseStatus(HttpStatus.OK)
+    public BookDTO findById(@PathVariable String specificID) {
+        return BookDTO.from(getBookBySpecificID.getBySpecificID(specificID));
     }
 
     @PostMapping
