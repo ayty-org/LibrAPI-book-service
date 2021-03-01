@@ -32,7 +32,7 @@ public class BookDTO implements Serializable {
     private long id;
 
     @NotNull
-    private UUID specificID = UUID.randomUUID();
+    private String specificID = UUID.randomUUID().toString();
 
     @NotNull(message = "ISBN cannot be null")
     @Size(min = 17, max = 17, message = "ISBN must have 17 characters like: 978-3-16-148410-0")

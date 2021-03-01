@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -39,7 +40,8 @@ public class Book implements Serializable {
     private long id;
 
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID specificID = UUID.randomUUID();
+    @Column(name = "specific_id")
+    private String specificID = UUID.randomUUID().toString();
 
     private String isbn;
 
